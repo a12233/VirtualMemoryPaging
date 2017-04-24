@@ -1,34 +1,14 @@
 // CMPSC 473: Project3
 
-#include "virtualMemoryManagerInterface.hpp"
+#include "myVMMI.hpp"
 
-virtualMemoryManagerInterface::virtualMemoryManagerInterface(ReplacementPolicy p, unsigned int pS, unsigned int nF, unsigned int vA) :
-	policy(p), N(pS), numFrames(nF), virtualAddressSpaceSize(vA) {
-
-	// initialize page table
-	for (int i = 0; i < N; i++) {
-		PAGE_TABLE[i] = 0;
-		// no memory-page assigned == false
-		PAGE_TABLE_VALID[i] = false;
-	}
-
-	// initialize physical memory
-	phyMemSize = numFrames * 2 ^ N;
-	for (int i = 0; i < phyMemSize; i++) {
-		PHYSICAL_MEMORY[i] = 0;
-		PHYSICAL_MEMORY_FREE[i] = true;
-		PHYSICAL_MEMORY_TIME_IN[i] = 0;
-		PHYSCIAL_MEMORY_TIME_ACCESS[i] = 0;
-	}
-
-}
 
 /** This is the method the test bench will drive in emulating memory management.
 *	Your memory manager should return the physical address corresponding to the given virtual
 *	address. This function must NOT return until any page swapping is completed, if necessary.
 *	This function is to effect page swaps by calling the other key function (defined below)
 */
-unsigned long long virtualMemoryManagerInterface::memoryAccess(unsigned long long address) {
+unsigned long long myVMMI::memoryAccess(unsigned long long address) {
 
 	// If not a valid addr, reject
 	if (address > virtualAddressSpaceSize) {
@@ -37,7 +17,7 @@ unsigned long long virtualMemoryManagerInterface::memoryAccess(unsigned long lon
 
 	// return addr if required has already been in the physical memory
 	if (PAGE_TABLE_VALID[address] == true) {
-		timerUpdate(PAGE_TABLE[address],false);
+		timerUpdate(PAGE_TABLE[address], false);
 
 		return PAGE_TABLE[address];
 	}
@@ -49,7 +29,7 @@ unsigned long long virtualMemoryManagerInterface::memoryAccess(unsigned long lon
 		PAGE_TABLE[address] = nextAvailableAddr;
 		PAGE_TABLE_VALID[address] = true;
 
-		timerUpdate(PAGE_TABLE[address],true);
+		timerUpdate(PAGE_TABLE[address], true);
 
 		return nextAvailableAddr;
 	}
@@ -66,12 +46,12 @@ unsigned long long virtualMemoryManagerInterface::memoryAccess(unsigned long lon
 	PAGE_TABLE[address] = nextAvailableAddr;
 	PAGE_TABLE_VALID[address] = true;
 
-	timerUpdate(PAGE_TABLE[address],true);
+	timerUpdate(PAGE_TABLE[address], true);
 	return nextAvailableAddr;
 }
 
 // Update timer, PHYSICAL_MEMORY_TIME_IN, PHYSCIAL_MEMORY_TIME_ACCESS
-void virtualMemoryManagerInterface::timerUpdate(int phy_addr,bool first_in) {
+void myVMMI::timerUpdate(int phy_addr, bool first_in) {
 
 	PHYSCIAL_MEMORY_TIME_ACCESS[phy_addr] = Timer;
 	if (first_in) {
@@ -83,7 +63,7 @@ void virtualMemoryManagerInterface::timerUpdate(int phy_addr,bool first_in) {
 /** This is the method to find index of the next free spot among the Physical memory
 * Return -1 if all physical memory occupied
 */
-int virtualMemoryManagerInterface::findNextAvailableAddr() {
+int myVMMI::findNextAvailableAddr() {
 
 	for (int i = 0; i < phyMemSize; i++) {
 		if (PHYSICAL_MEMORY_FREE[i] == true) {
@@ -97,7 +77,7 @@ int virtualMemoryManagerInterface::findNextAvailableAddr() {
 
 /** This is the method to find FIFO index among the Physical memory
 */
-int virtualMemoryManagerInterface::findFifoAddr() {
+int myVMMI::findFifoAddr() {
 	int fifo_time = INFINITY;
 	int fifo_index = -1;
 
@@ -112,7 +92,7 @@ int virtualMemoryManagerInterface::findFifoAddr() {
 
 /** This is the method to find LRU index among the Physical memory
 */
-int virtualMemoryManagerInterface::findLruAddr() {
+int myVMMI::findLruAddr() {
 	int lru_time = INFINITY;
 	int lru_index = -1;
 

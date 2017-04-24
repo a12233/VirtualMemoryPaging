@@ -1,8 +1,3 @@
-///Rex Li,     
-//push 0.1
-
-// Last Update: AC 4/22
-
 #pragma once
 #include <iostream>
 #include <cassert>
@@ -21,7 +16,7 @@ class virtualMemoryManagerInterface
 public:
 	virtualMemoryManagerInterface(ReplacementPolicy p, unsigned int pS, unsigned int nF, unsigned int vA) : policy(p), N(pS), numFrames(nF), virtualAddressSpaceSize(vA) {
 		assert(virtualAddressSpaceSize > N);
-		assert(pow(2, virtualAddressSpaceSize) > numFrames * pow(2,N));
+		assert(pow(2, virtualAddressSpaceSize) > numFrames * pow(2, N));
 	}
 
 	/** This is the method the test bench will drive in emulating memory management.
@@ -48,18 +43,6 @@ public:
 	*/
 	unsigned long long& numberPageSwaps() { return numSwaps; }
 
-	/** Report the to-date number of page swaps, used by test benches to quantify performance.
-	*	@returns the number of page swaps
-	*/
-	unsigned long long& numberPageSwaps() { return numSwaps; }
-
-
-	// Self-defined functions
-	int findNextAvailableAddr();
-	int findFifoAddr();
-	int findLruAddr();
-	void timerUpdate(int phy_addr,bool first_in);
-
 protected:
 	ReplacementPolicy policy;
 
@@ -67,17 +50,6 @@ protected:
 	unsigned int numFrames; /// total number of physical frames. Phy mem size = numFrames * 2^N
 	unsigned int virtualAddressSpaceSize; ///  2^virtualAddressSpaceSize = total virtual address space (bytes)
 
-
 	unsigned long long numSwaps = 0; ///total number of page swaps performed
 
-	unsigned int * PAGE_TABLE;
-	bool *PAGE_TABLE_VALID;
-
-	unsigned int * PHYSICAL_MEMORY;
-	bool * PHYSICAL_MEMORY_FREE;
-	int * PHYSICAL_MEMORY_TIME_IN;
-	int * PHYSCIAL_MEMORY_TIME_ACCESS;
-
-	int phyMemSize;
-	int Timer = 0;
 };
