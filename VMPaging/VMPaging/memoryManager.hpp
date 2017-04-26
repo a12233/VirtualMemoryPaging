@@ -21,6 +21,9 @@ public:
 	int findNextAvailableAddr();
 	int findFifoAddr();
 	int findLruAddr();
+	int findPhysicalAddr(int addr);
+	int findPageIndex(unsigned long long addr);
+	int getPMIndex(int addr, int phyaddr);
 	void timerUpdate(int phy_addr, bool first_in);
 
 private:
