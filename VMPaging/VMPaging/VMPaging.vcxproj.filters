@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="virtualMemoryManagerInterface.cpp">
+    <ClCompile Include="virtualMemPaging.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="virtualMemPaging.cpp">
+    <ClCompile Include="memoryManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -27,6 +27,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="myVMMI.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memoryManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

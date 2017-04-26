@@ -146,10 +146,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="virtualMemoryManagerInterface.cpp" />
+    <ClCompile Include="memoryManager.cpp" />
     <ClCompile Include="virtualMemPaging.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="memoryManager.hpp" />
     <ClInclude Include="myVMMI.hpp" />
     <ClInclude Include="virtualMemoryManagerInterface.hpp" />
   </ItemGroup>
