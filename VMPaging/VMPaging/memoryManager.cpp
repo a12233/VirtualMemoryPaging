@@ -39,9 +39,15 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 }
 
 int memoryManager::findPageIndex(unsigned long long addr) {
-
-	double page = (pow(2,virtualAddressSpaceSize)) / (pow(2, N));
-	return floor(page);
+	/*
+	unsigned long long index = address / PAGESIZE ;
+	unsigned long long offset = address % PAGESIZE ;
+	
+	*/
+	int page = addr / pow(2,N); 
+	return page; 
+	//double page = (pow(2,virtualAddressSpaceSize)) / (pow(2, N));
+	//return floor(page);
 }
 
 int memoryManager::getPMIndex(int addr, int phyaddr) {
