@@ -7,7 +7,7 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	address = findPageIndex(address);
 
 	// If not a valid addr, reject
-	if (2^address > 2^virtualAddressSpaceSize) {
+	if (pow(2,address) > pow(2,virtualAddressSpaceSize)) {
 		cerr << "invalid virtual address!" << endl;
 	}
 
@@ -23,7 +23,7 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	int nextAvailableAddr = findNextAvailableAddr();
 	// if no place available in the memory, execute the replacement policy
 	if (nextAvailableAddr == -1) {
-		if (policy == FIFO) {
+		if (policy == FIFO) {   //!!!!!!!!!!!!!!!!!!!TODOTODO
 			nextAvailableAddr = findFifoAddr();
 		}
 		else {
@@ -40,15 +40,15 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 
 int memoryManager::findPageIndex(unsigned long long addr) {
 
-	double page = (2 ^ virtualAddressSpaceSize) / (2 ^ N);
+	double page = (pow(2,virtualAddressSpaceSize)) / (pow(2, N));
 	return floor(page);
 }
 
 int memoryManager::getPMIndex(int addr, int phyaddr) {
 
 	int VMpage = findPageIndex(addr);
-	int restAddr = addr - 2 ^ VMpage;
-	return (phyaddr*2^VMpage) + restAddr;
+	int restAddr = addr - pow(2, VMpage);
+	return (phyaddr*pow(2,VMpage)) + restAddr;
 
 }
 
