@@ -151,7 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="memoryManager.hpp" />
-    <ClInclude Include="myVMMI.hpp" />
     <ClInclude Include="virtualMemoryManagerInterface.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

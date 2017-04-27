@@ -1,24 +1,5 @@
 #include "memoryManager.hpp"
 
-memoryManager::memoryManager(ReplacementPolicy p, unsigned int pS, unsigned int nF, unsigned int vA) :
-	virtualMemoryManagerInterface(p, pS, nF, vA) {
-
-	// initialize page table
-	for (int i = 0; i < nF; i++) {
-		PAGE_TABLE[i] = 0;
-		// no memory-page assigned == false
-		PAGE_TABLE_VALID[i] = false;
-	}
-
-	// initialize physical memory
-	phyMemSize = numFrames * 2 ^ N;
-	for (int i = 0; i < phyMemSize; i++) {
-		PHYSICAL_MEMORY[i] = 0; 
-		PHYSICAL_MEMORY_FREE[i] = true;
-		PHYSICAL_MEMORY_TIME_IN[i] = 0;
-		PHYSCIAL_MEMORY_TIME_ACCESS[i] = 0;
-	}
-}
 
 unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 

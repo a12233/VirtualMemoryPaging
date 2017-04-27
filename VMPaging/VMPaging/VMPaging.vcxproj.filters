@@ -26,9 +26,6 @@
     <ClInclude Include="virtualMemoryManagerInterface.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="myVMMI.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="memoryManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
