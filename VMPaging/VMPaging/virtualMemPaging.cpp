@@ -11,13 +11,16 @@ int main()
 		//assert(virtualAddressSpaceSize > N);
 		//assert(pow(2, virtualAddressSpaceSize) > numFrames * pow(2, N));
 	
-	int frames[12] = { 0,2,1,6,4,0,1,0,3,1,2,1 };
+	int phyAdd[12];
+	for (int i = 0; i < 12; i++) {
+		phyAdd[i] = rand() % 65536; //== 2^16, size of virtual memory
+	}
 	memoryManager mem1(FIFO, 12, 4, 16); 
 	//4KB page size => 12 bits page address, 4 frames, 16KB physical address space, 14bits physical address, 2^16 virtual address space
 
 	for (int i = 0; i < 12; i++)
 	{
-		mem1.memoryAccess(frames[i]);
+		mem1.memoryAccess(phyAdd[i]);
 
 	}
 	cout << mem1.numberPageSwaps();
