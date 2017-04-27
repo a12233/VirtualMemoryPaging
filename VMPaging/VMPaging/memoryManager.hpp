@@ -14,6 +14,7 @@ public:
 	memoryManager(ReplacementPolicy p, unsigned int pS, unsigned int nF, unsigned int vA) :
 		virtualMemoryManagerInterface(p, pS, nF, vA) {
 		// initialize page table
+			virtualAddressSpaceSize = pow(2, vA);
 			PAGE_TABLE = (unsigned int*)calloc(nF, 8);
 			PAGE_TABLE_VALID = (bool*)calloc(nF, 1);
 

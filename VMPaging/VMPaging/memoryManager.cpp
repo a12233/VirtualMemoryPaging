@@ -23,7 +23,7 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	int nextAvailableAddr = findNextAvailableAddr();
 	// if no place available in the memory, execute the replacement policy
 	if (nextAvailableAddr == -1) {
-		if (policy == FIFO) {   //!!!!!!!!!!!!!!!!!!!TODOTODO
+		if (policy == FIFO) {   
 			nextAvailableAddr = findFifoAddr();
 		}
 		else {
