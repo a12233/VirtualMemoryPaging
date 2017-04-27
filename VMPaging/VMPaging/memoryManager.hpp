@@ -48,6 +48,7 @@ public:
 	int findPageIndex(unsigned long long addr);
 	int getPMIndex(int addr, int phyaddr);
 	void timerUpdate(int phy_addr, bool first_in);
+	void freeMem(); 
 
 private:
 	unsigned int * PAGE_TABLE;
