@@ -20,5 +20,6 @@ int main()
 
 	}
 	cout << mem1.numberPageSwaps();
+	mem1.freeMem();
 	return 0;
 }///pushing to github

@@ -35,7 +35,6 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	PHYSICAL_MEMORY[nextAvailableAddr] = address;
 	PHYSICAL_MEMORY_FREE[nextAvailableAddr] = false;
 	timerUpdate(nextAvailableAddr, true);
-	freeMem(); 
 	return getPMIndex(orignal_address, nextAvailableAddr);
 }
 
