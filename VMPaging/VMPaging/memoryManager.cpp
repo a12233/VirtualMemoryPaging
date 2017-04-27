@@ -3,19 +3,18 @@
 
 unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 
-	unsigned long long orignal_address = address;
-	address = findPageIndex(address);
+	unsigned long long addressNew = findPageIndex(address);
 
 	// If not a valid addr, reject
-	if (pow(2,address) > pow(2,virtualAddressSpaceSize)) {
+	if (pow(2,addressNew) > pow(2,virtualAddressSpaceSize)) {
 		cerr << "invalid virtual address!" << endl;
 	}
 
-	int phyAddrIdx = findPhysicalAddr(address);
+	int phyAddrIdx = findPhysicalAddr(addressNew);
 	// return addr if required has already been in the physical memory
 	if (phyAddrIdx != -1) {
 		timerUpdate(phyAddrIdx, false);
-		return getPMIndex(orignal_address,phyAddrIdx);
+		return getPMIndex(addressNew,phyAddrIdx);
 	}
 
 	// if not in the memory
@@ -30,12 +29,13 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 			nextAvailableAddr = findLruAddr();
 		}
 		// Save back to disk
-		swap(PHYSICAL_MEMORY[nextAvailableAddr], address);
+		swap(PHYSICAL_MEMORY[nextAvailableAddr], addressNew);
 	}
 	PHYSICAL_MEMORY[nextAvailableAddr] = address;
 	PHYSICAL_MEMORY_FREE[nextAvailableAddr] = false;
 	timerUpdate(nextAvailableAddr, true);
-	return getPMIndex(orignal_address, nextAvailableAddr);
+	freeMem();
+	return getPMIndex(address, nextAvailableAddr);
 }
 
 int memoryManager::findPageIndex(unsigned long long addr) {
