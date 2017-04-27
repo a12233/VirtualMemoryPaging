@@ -20,5 +20,6 @@ int main()
 
 	}
 	cout << mem1.numberPageSwaps();
+	//TODO: free memory
 	return 0;
 }///pushing to github
