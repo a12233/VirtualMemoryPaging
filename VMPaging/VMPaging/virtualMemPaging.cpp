@@ -27,5 +27,8 @@ int main()
 	}
 	cout << "Number of page swaps ", mem1.numberPageSwaps();
 	mem1.freeMem();
+
+	int haha;
+	cin >> haha;
 	return 0;
 }///pushing to github
