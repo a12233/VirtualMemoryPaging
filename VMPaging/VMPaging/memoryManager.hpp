@@ -25,7 +25,10 @@ public:
 
 			for (int i = 0; i < phyMemSize; i++) {
 				PHYSICAL_MEMORY_FREE[i] = true;
-				
+				PHYSICAL_MEMORY[i] = -1;
+				PHYSCIAL_MEMORY_TIME_ACCESS[i] = -1;
+				PHYSICAL_MEMORY_TIME_IN[i] = -1;
+
 			}
 	
 	};
