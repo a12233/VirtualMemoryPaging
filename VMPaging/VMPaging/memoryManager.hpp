@@ -24,7 +24,8 @@ public:
 			//}
 
 			// initialize physical memory (physical memory is the mapping of virtual address to physical address) 
-			phyMemSize = numFrames * pow(2 , N);
+			//phyMemSize = numFrames * pow(2 , N);
+			phyMemSize = numFrames; 
 			PHYSICAL_MEMORY = (int*)calloc(numFrames, 8); 
 			PHYSICAL_MEMORY_TIME_IN = (int*)calloc(numFrames, 8);
 			PHYSCIAL_MEMORY_TIME_ACCESS = (int*)calloc(numFrames, 8);

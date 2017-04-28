@@ -59,7 +59,7 @@ int memoryManager::getPMIndex(int addr, int phyaddr) {
 }
 
 int memoryManager::findPhysicalAddr(int addr) {
-	for (int i = 0; i < phyMemSize; i++) {
+	for (int i = 0; i < phyMemSize; i++) { 
 		if (PHYSICAL_MEMORY[i] == addr) {
 			return i;
 		}
