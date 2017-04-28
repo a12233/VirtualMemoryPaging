@@ -16,15 +16,7 @@ public:
 		// initialize page table
 
 			virtualAddressSpaceSize = pow(2, vA);
-			//PAGE_TABLE = (unsigned int*)calloc(nF, 8);
-			//PAGE_TABLE_VALID = (bool*)calloc(nF, 1);
 
-			//for (unsigned int i = 0; i < nF; i++) {
-			//	PAGE_TABLE_VALID[i] = false;
-			//}
-
-			// initialize physical memory (physical memory is the mapping of virtual address to physical address) 
-			//phyMemSize = numFrames * pow(2 , N);
 			phyMemSize = numFrames; 
 			PHYSICAL_MEMORY = (int*)calloc(numFrames, 8); 
 			PHYSICAL_MEMORY_TIME_IN = (int*)calloc(numFrames, 8);

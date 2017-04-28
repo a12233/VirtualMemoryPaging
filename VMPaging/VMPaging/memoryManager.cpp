@@ -3,8 +3,9 @@
 
 unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 
+	cout << "virtual address in: " << address << endl;
 	unsigned long long addressNew = findPageIndex(address);
-
+	cout << "virtual page in: " << addressNew << endl;
 	// If not a valid addr, reject
 	if (pow(2,addressNew) > pow(2,virtualAddressSpaceSize)) {
 		cerr << "invalid virtual address!" << endl;
@@ -16,7 +17,7 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 		timerUpdate(phyAddrIdx, false);
 		return getPMIndex(addressNew,phyAddrIdx);
 	}
-
+	
 	// if not in the memory
 	// try to find a place available in the memory
 	int nextAvailableAddr = findNextAvailableAddr();
@@ -34,8 +35,12 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	PHYSICAL_MEMORY[nextAvailableAddr] = address;
 	PHYSICAL_MEMORY_FREE[nextAvailableAddr] = false;
 	timerUpdate(nextAvailableAddr, true);
-	freeMem();
+	//freeMem();
+	cout << "physical frame in: " << nextAvailableAddr << endl;
+	cout << "PHYSCIAL addr: " << getPMIndex(address, nextAvailableAddr) << endl;
+	cout << endl;
 	return getPMIndex(address, nextAvailableAddr);
+
 }
 
 int memoryManager::findPageIndex(unsigned long long addr) {
