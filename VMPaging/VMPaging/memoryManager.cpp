@@ -3,9 +3,9 @@
 
 unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 
-	cout << "virtual address in: " << address << endl;
+	cout << "virtual address: " << address << endl;
 	unsigned long long addressNew = findPageIndex(address);
-	cout << "virtual page in: " << addressNew << endl;
+	cout << "virtual page: " << addressNew << endl;
 	// If not a valid addr, reject
 	if (pow(2,addressNew) > pow(2,virtualAddressSpaceSize)) {
 		cerr << "invalid virtual address!" << endl;
@@ -15,6 +15,8 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	// return addr if required has already been in the physical memory
 	if (phyAddrIdx != -1) {
 		timerUpdate(phyAddrIdx, false);
+		cout << "physical frame: " << phyAddrIdx << endl;
+		cout << "PHYSCIAL addr: " << getPMIndex(address, phyAddrIdx) << endl;
 		return getPMIndex(addressNew,phyAddrIdx);
 	}
 	
@@ -25,18 +27,24 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	if (nextAvailableAddr == -1) {
 		if (policy == FIFO) {   
 			nextAvailableAddr = findFifoAddr();
+			if (nextAvailableAddr == -1) {
+				cout << "FIFO wrong!" << endl;
+			}
 		}
 		else {
 			nextAvailableAddr = findLruAddr();
+			if (nextAvailableAddr == -1) {
+				cout << "lRU wrong!" << endl;
+			}
 		}
 		// Save back to disk
 		swap(PHYSICAL_MEMORY[nextAvailableAddr], addressNew);
 	}
-	PHYSICAL_MEMORY[nextAvailableAddr] = address;
+	PHYSICAL_MEMORY[nextAvailableAddr] = addressNew;
 	PHYSICAL_MEMORY_FREE[nextAvailableAddr] = false;
 	timerUpdate(nextAvailableAddr, true);
 	//freeMem();
-	cout << "physical frame in: " << nextAvailableAddr << endl;
+	cout << "physical frame: " << nextAvailableAddr << endl;
 	cout << "PHYSCIAL addr: " << getPMIndex(address, nextAvailableAddr) << endl;
 	cout << endl;
 	return getPMIndex(address, nextAvailableAddr);
@@ -100,7 +108,7 @@ int memoryManager::findNextAvailableAddr() {
 /** This is the method to find FIFO index among the Physical memory
 */
 int memoryManager::findFifoAddr() {
-	int fifo_time = INFINITY;
+	int fifo_time = 100000;
 	int fifo_index = -1;
 
 	for (int i = 0; i < phyMemSize; i++) {
@@ -115,7 +123,7 @@ int memoryManager::findFifoAddr() {
 /** This is the method to find LRU index among the Physical memory
 */
 int memoryManager::findLruAddr() {
-	int lru_time = INFINITY;
+	int lru_time = 100000;
 	int lru_index = -1;
 
 	for (int i = 0; i < phyMemSize; i++) {
