@@ -6,6 +6,7 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	cout << "virtual address: " << address << endl;
 	unsigned long long addressNew = findPageIndex(address);
 	cout << "virtual page: " << addressNew << endl;
+	
 	// If not a valid addr, reject
 	if (pow(2,addressNew) > pow(2,virtualAddressSpaceSize)) {
 		cerr << "invalid virtual address!" << endl;
@@ -38,6 +39,7 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 			}
 		}
 		// Save back to disk
+		cout << "swap!!" << endl;
 		swap(PHYSICAL_MEMORY[nextAvailableAddr], addressNew);
 	}
 	PHYSICAL_MEMORY[nextAvailableAddr] = addressNew;
@@ -52,22 +54,17 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 }
 
 int memoryManager::findPageIndex(unsigned long long addr) {
-	/*
-	unsigned long long index = address / PAGESIZE ;
-	unsigned long long offset = address % PAGESIZE ;
-	
-	*/
+
 	int page = addr / pow(2,N); 
 	return page; 
-	//double page = (pow(2,virtualAddressSpaceSize)) / (pow(2, N));
-	//return floor(page);
+
 }
 
 int memoryManager::getPMIndex(int addr, int phyaddr) {
 
 	int VMpage = findPageIndex(addr);
-	int restAddr = addr - pow(2, VMpage);
-	return (phyaddr*pow(2,VMpage)) + restAddr;
+	int restAddr = addr - VMpage*pow(2, N);
+	return (phyaddr*pow(2,N)) + restAddr;
 
 }
 
