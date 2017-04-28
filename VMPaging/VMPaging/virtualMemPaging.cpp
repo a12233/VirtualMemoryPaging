@@ -25,7 +25,10 @@ int main()
 		mem1.memoryAccess(phyAdd[i]);
 
 	}
-	cout << "Number of page swaps ", mem1.numberPageSwaps();
+	int temp = mem1.numberPageSwaps();
+	
+	cout << "Number of page swaps ";
+	cout << temp; 
 	mem1.freeMem();
 
 	int haha;
