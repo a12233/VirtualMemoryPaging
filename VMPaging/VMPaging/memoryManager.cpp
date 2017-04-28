@@ -34,7 +34,6 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	PHYSICAL_MEMORY[nextAvailableAddr] = address;
 	PHYSICAL_MEMORY_FREE[nextAvailableAddr] = false;
 	timerUpdate(nextAvailableAddr, true);
-	freeMem();
 	return getPMIndex(address, nextAvailableAddr);
 }
 
@@ -123,8 +122,8 @@ int memoryManager::findLruAddr() {
 }
 void memoryManager::freeMem()
 {
-	free(PAGE_TABLE);
-	free(PAGE_TABLE_VALID);
+	//free(PAGE_TABLE);
+	//free(PAGE_TABLE_VALID);
 	free(PHYSICAL_MEMORY);
 	free(PHYSICAL_MEMORY_FREE);
 	free(PHYSICAL_MEMORY_TIME_IN);
