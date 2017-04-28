@@ -25,7 +25,7 @@ int main()
 		mem1.memoryAccess(phyAdd[i]);
 
 	}
-	cout << mem1.numberPageSwaps();
+	cout << "Number of page swaps ", mem1.numberPageSwaps();
 	mem1.freeMem();
 	return 0;
 }///pushing to github
