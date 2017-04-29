@@ -40,10 +40,15 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 		}
 		// Save back to disk
 		cout << "swap!!" << endl;
-		swap(PHYSICAL_MEMORY[nextAvailableAddr], addressNew);
+		//swap(PHYSICAL_MEMORY[nextAvailableAddr], addressNew);
+		swap(phyMem[nextAvailableAddr], addressNew); 
 	}
-	PHYSICAL_MEMORY[nextAvailableAddr] = addressNew;
-	PHYSICAL_MEMORY_FREE[nextAvailableAddr] = false;
+	//PHYSICAL_MEMORY[nextAvailableAddr] = addressNew;
+	phyMem[nextAvailableAddr] = addressNew; 
+
+	//PHYSICAL_MEMORY_FREE[nextAvailableAddr] = false;
+	phyMemFree[nextAvailableAddr] = false; 
+
 	timerUpdate(nextAvailableAddr, true);
 	//freeMem();
 	cout << "physical frame: " << nextAvailableAddr << endl;
@@ -70,7 +75,8 @@ int memoryManager::getPMIndex(int addr, int phyaddr) {
 
 int memoryManager::findPhysicalAddr(int addr) {
 	for (int i = 0; i < phyMemSize; i++) { 
-		if (PHYSICAL_MEMORY[i] == addr) {
+		//if (PHYSICAL_MEMORY[i] == addr) {
+		if(phyMem[i] == addr) {
 			return i;
 		}
 	}
@@ -80,9 +86,11 @@ int memoryManager::findPhysicalAddr(int addr) {
 // Update timer, PHYSICAL_MEMORY_TIME_IN, PHYSCIAL_MEMORY_TIME_ACCESS
 void memoryManager::timerUpdate(int phy_addr, bool first_in) {
 
-	PHYSCIAL_MEMORY_TIME_ACCESS[phy_addr] = Timer;
+	phyMemTimeAcc[phy_addr] = Timer; 
+	//PHYSCIAL_MEMORY_TIME_ACCESS[phy_addr] = Timer;
 	if (first_in) {
-		PHYSICAL_MEMORY_TIME_IN[phy_addr] = Timer;
+		//PHYSICAL_MEMORY_TIME_IN[phy_addr] = Timer;
+		phyMemTimeIn[phy_addr] = Timer; 
 	}
 	Timer++;
 }
@@ -93,8 +101,10 @@ void memoryManager::timerUpdate(int phy_addr, bool first_in) {
 int memoryManager::findNextAvailableAddr() {
 
 	for (int i = 0; i < phyMemSize; i++) {
-		if (PHYSICAL_MEMORY_FREE[i] == true) {
-			PHYSICAL_MEMORY_FREE[i] = false;
+		//if (PHYSICAL_MEMORY_FREE[i] == true) {
+		//	PHYSICAL_MEMORY_FREE[i] = false;
+		if(phyMemFree[i] == true) {
+			phyMemFree[i] = false; 
 			return i;
 		}
 	}
@@ -109,8 +119,10 @@ int memoryManager::findFifoAddr() {
 	int fifo_index = -1;
 
 	for (int i = 0; i < phyMemSize; i++) {
-		if (PHYSICAL_MEMORY_TIME_IN[i] < fifo_time) {
-			fifo_time = PHYSICAL_MEMORY_TIME_IN[i];
+		//if (PHYSICAL_MEMORY_TIME_IN[i] < fifo_time) {
+		//	fifo_time = PHYSICAL_MEMORY_TIME_IN[i];
+		if(phyMemTimeIn[i] < fifo_time) {
+			fifo_time = phyMemTimeIn[i]; 
 			fifo_index = i;
 		}
 	}
@@ -124,8 +136,11 @@ int memoryManager::findLruAddr() {
 	int lru_index = -1;
 
 	for (int i = 0; i < phyMemSize; i++) {
-		if (PHYSCIAL_MEMORY_TIME_ACCESS[i] < lru_time) {
-			lru_time = PHYSICAL_MEMORY_TIME_IN[i];
+		//if (PHYSCIAL_MEMORY_TIME_ACCESS[i] < lru_time) {
+			//lru_time = PHYSICAL_MEMORY_TIME_IN[i];
+
+		if(phyMemTimeAcc[i]<lru_time) {
+			lru_time = phyMemTimeIn[i]; 
 			lru_index = i;
 		}
 	}
@@ -135,9 +150,9 @@ void memoryManager::freeMem()
 {
 	//free(PAGE_TABLE);
 	//free(PAGE_TABLE_VALID);
-	free(PHYSICAL_MEMORY);
-	free(PHYSICAL_MEMORY_FREE);
-	free(PHYSICAL_MEMORY_TIME_IN);
-	free(PHYSCIAL_MEMORY_TIME_ACCESS);
+	//free(PHYSICAL_MEMORY);
+	//free(PHYSICAL_MEMORY_FREE);
+	//free(PHYSICAL_MEMORY_TIME_IN);
+	//free(PHYSCIAL_MEMORY_TIME_ACCESS);
 
 }
