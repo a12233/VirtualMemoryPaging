@@ -30,10 +30,9 @@ int main()
 	int temp = mem1.numberPageSwaps();
 	
 	cout << "Number of page swaps ";
-	cout << temp; 
+	cout << temp << "\n"; 
 	//mem1.freeMem();
 
-//	int haha;
-	//cin >> haha;
+
 	return 0;
-}///pushing to github
+}

@@ -32,7 +32,7 @@ public:
 			//	PHYSICAL_MEMORY_TIME_IN[i] = -1;
 
 				phyMem.push_back(-1);
-				phyMemFree.push_back(0);
+				phyMemFree.push_back(true);
 				phyMemTimeIn.push_back(-1);
 				phyMemTimeAcc.push_back(-1);
 			}
