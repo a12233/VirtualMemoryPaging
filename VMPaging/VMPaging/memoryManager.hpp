@@ -48,7 +48,7 @@ public:
 	int findLruAddr();
 	int findPhysicalAddr(int addr);
 	int findPageIndex(unsigned long long addr);
-	int getPMIndex(int addr, int phyaddr);
+	int getPMIndex(int addr, int frame_i);
 	void timerUpdate(int phy_addr, bool first_in);
 	void freeMem(); 
 

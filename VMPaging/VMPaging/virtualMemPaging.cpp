@@ -32,7 +32,7 @@ int main()
 	cout << "Number of page swaps ";
 	cout << temp << "\n"; 
 	//mem1.freeMem();
-
+	cin >> temp;
 
 	return 0;
 }

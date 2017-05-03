@@ -65,12 +65,9 @@ int memoryManager::findPageIndex(unsigned long long addr) {
 
 }
 
-int memoryManager::getPMIndex(int addr, int phyaddr) {
-
-	int VMpage = findPageIndex(addr);
-	int restAddr = addr - VMpage*pow(2, N);
-	return (phyaddr*pow(2,N)) + restAddr;
-
+int memoryManager::getPMIndex(int addr, int frame_i) {
+	int offset = addr % (int)pow(2, N);
+	return (frame_i*pow(2,N) + offset);
 }
 
 int memoryManager::findPhysicalAddr(int addr) {
