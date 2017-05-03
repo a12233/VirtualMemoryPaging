@@ -65,6 +65,7 @@ int memoryManager::findPageIndex(unsigned long long addr) {
 
 int memoryManager::getPMIndex(int addr, int frame_i) {
 	int offset = addr % (int)pow(2, N);
+	cout << offset;
 	return (frame_i*pow(2,N) + offset);
 }
 
@@ -135,7 +136,7 @@ int memoryManager::findLruAddr() {
 			//lru_time = PHYSICAL_MEMORY_TIME_IN[i];
 
 		if(phyMemTimeAcc[i]<lru_time) {
-			lru_time = phyMemTimeIn[i]; 
+			lru_time = phyMemTimeAcc[i]; 
 			lru_index = i;
 		}
 	}
