@@ -1,0 +1,787 @@
+--> Policy Number (LRU = 1, FIFO=0):  1
+--> Enter N: 3
+--> Number of Frames: 4
+--> Virtual Address Size: 8
+
+--> Give an address: 
+--> Address: 171
+physical frame: 0
+PHYSCIAL addr: 3
+--> Physical memory: 3
+--> Total Swaps: 0
+
+--> Give an address: 
+--> Address: 141
+physical frame: 1
+PHYSCIAL addr: 13
+--> Physical memory: 13
+--> Total Swaps: 0
+
+--> Give an address: 
+--> Address: 13
+physical frame: 2
+PHYSCIAL addr: 21
+--> Physical memory: 21
+--> Total Swaps: 0
+
+--> Give an address: 
+--> Address: 227
+physical frame: 3
+PHYSCIAL addr: 27
+--> Physical memory: 27
+--> Total Swaps: 0
+
+--> Give an address: 
+--> Address: 203
+swap!!
+physical frame: 0
+PHYSCIAL addr: 3
+--> Physical memory: 3
+--> Total Swaps: 1
+
+--> Give an address: 
+--> Address: 4
+swap!!
+physical frame: 1
+PHYSCIAL addr: 12
+--> Physical memory: 12
+--> Total Swaps: 2
+
+--> Give an address: 
+--> Address: 252
+swap!!
+physical frame: 2
+PHYSCIAL addr: 20
+--> Physical memory: 20
+--> Total Swaps: 3
+
+--> Give an address: 
+--> Address: 23
+swap!!
+physical frame: 3
+PHYSCIAL addr: 31
+--> Physical memory: 31
+--> Total Swaps: 4
+
+--> Give an address: 
+--> Address: 252
+physical frame: 2
+PHYSCIAL addr: 20
+--> Physical memory: 20
+--> Total Swaps: 4
+
+--> Give an address: 
+--> Address: 190
+swap!!
+physical frame: 0
+PHYSCIAL addr: 6
+--> Physical memory: 6
+--> Total Swaps: 5
+
+--> Give an address: 
+--> Address: 35
+swap!!
+physical frame: 1
+PHYSCIAL addr: 11
+--> Physical memory: 11
+--> Total Swaps: 6
+
+--> Give an address: 
+--> Address: 152
+swap!!
+physical frame: 2
+PHYSCIAL addr: 16
+--> Physical memory: 16
+--> Total Swaps: 7
+
+--> Give an address: 
+--> Address: 150
+swap!!
+physical frame: 3
+PHYSCIAL addr: 30
+--> Physical memory: 30
+--> Total Swaps: 8
+
+--> Give an address: 
+--> Address: 249
+swap!!
+physical frame: 0
+PHYSCIAL addr: 1
+--> Physical memory: 1
+--> Total Swaps: 9
+
+--> Give an address: 
+--> Address: 137
+swap!!
+physical frame: 1
+PHYSCIAL addr: 9
+--> Physical memory: 9
+--> Total Swaps: 10
+
+--> Give an address: 
+--> Address: 57
+swap!!
+physical frame: 2
+PHYSCIAL addr: 17
+--> Physical memory: 17
+--> Total Swaps: 11
+
+--> Give an address: 
+--> Address: 207
+swap!!
+physical frame: 3
+PHYSCIAL addr: 31
+--> Physical memory: 31
+--> Total Swaps: 12
+
+--> Give an address: 
+--> Address: 68
+swap!!
+physical frame: 0
+PHYSCIAL addr: 4
+--> Physical memory: 4
+--> Total Swaps: 13
+
+--> Give an address: 
+--> Address: 202
+physical frame: 3
+PHYSCIAL addr: 26
+--> Physical memory: 26
+--> Total Swaps: 13
+
+--> Give an address: 
+--> Address: 68
+physical frame: 0
+PHYSCIAL addr: 4
+--> Physical memory: 4
+--> Total Swaps: 13
+
+--> Give an address: 
+--> Address: 189
+swap!!
+physical frame: 1
+PHYSCIAL addr: 13
+--> Physical memory: 13
+--> Total Swaps: 14
+
+--> Give an address: 
+--> Address: 91
+swap!!
+physical frame: 2
+PHYSCIAL addr: 19
+--> Physical memory: 19
+--> Total Swaps: 15
+
+--> Give an address: 
+--> Address: 5
+swap!!
+physical frame: 0
+PHYSCIAL addr: 5
+--> Physical memory: 5
+--> Total Swaps: 16
+
+--> Give an address: 
+--> Address: 215
+swap!!
+physical frame: 3
+PHYSCIAL addr: 31
+--> Physical memory: 31
+--> Total Swaps: 17
+
+--> Give an address: 
+--> Address: 41
+swap!!
+physical frame: 1
+PHYSCIAL addr: 9
+--> Physical memory: 9
+--> Total Swaps: 18
+
+--> Give an address: 
+--> Address: 139
+swap!!
+physical frame: 2
+PHYSCIAL addr: 19
+--> Physical memory: 19
+--> Total Swaps: 19
+
+--> Give an address: 
+--> Address: 22
+swap!!
+physical frame: 0
+PHYSCIAL addr: 6
+--> Physical memory: 6
+--> Total Swaps: 20
+
+--> Give an address: 
+--> Address: 66
+swap!!
+physical frame: 3
+PHYSCIAL addr: 26
+--> Physical memory: 26
+--> Total Swaps: 21
+
+--> Give an address: 
+--> Address: 231
+swap!!
+physical frame: 1
+PHYSCIAL addr: 15
+--> Physical memory: 15
+--> Total Swaps: 22
+
+--> Give an address: 
+--> Address: 57
+swap!!
+physical frame: 2
+PHYSCIAL addr: 17
+--> Physical memory: 17
+--> Total Swaps: 23
+
+--> Give an address: 
+--> Address: 232
+swap!!
+physical frame: 0
+PHYSCIAL addr: 0
+--> Physical memory: 0
+--> Total Swaps: 24
+
+--> Give an address: 
+--> Address: 250
+swap!!
+physical frame: 3
+PHYSCIAL addr: 26
+--> Physical memory: 26
+--> Total Swaps: 25
+
+--> Give an address: 
+--> Address: 168
+swap!!
+physical frame: 1
+PHYSCIAL addr: 8
+--> Physical memory: 8
+--> Total Swaps: 26
+
+--> Give an address: 
+--> Address: 170
+physical frame: 1
+PHYSCIAL addr: 10
+--> Physical memory: 10
+--> Total Swaps: 26
+
+--> Give an address: 
+--> Address: 51
+swap!!
+physical frame: 2
+PHYSCIAL addr: 19
+--> Physical memory: 19
+--> Total Swaps: 27
+
+--> Give an address: 
+--> Address: 253
+physical frame: 3
+PHYSCIAL addr: 29
+--> Physical memory: 29
+--> Total Swaps: 27
+
+--> Give an address: 
+--> Address: 234
+physical frame: 0
+PHYSCIAL addr: 2
+--> Physical memory: 2
+--> Total Swaps: 27
+
+--> Give an address: 
+--> Address: 51
+physical frame: 2
+PHYSCIAL addr: 19
+--> Physical memory: 19
+--> Total Swaps: 27
+
+--> Give an address: 
+--> Address: 199
+swap!!
+physical frame: 0
+PHYSCIAL addr: 7
+--> Physical memory: 7
+--> Total Swaps: 28
+
+--> Give an address: 
+--> Address: 97
+swap!!
+physical frame: 1
+PHYSCIAL addr: 9
+--> Physical memory: 9
+--> Total Swaps: 29
+
+--> Give an address: 
+--> Address: 253
+physical frame: 3
+PHYSCIAL addr: 29
+--> Physical memory: 29
+--> Total Swaps: 29
+
+--> Give an address: 
+--> Address: 230
+swap!!
+physical frame: 2
+PHYSCIAL addr: 22
+--> Physical memory: 22
+--> Total Swaps: 30
+
+--> Give an address: 
+--> Address: 171
+swap!!
+physical frame: 0
+PHYSCIAL addr: 3
+--> Physical memory: 3
+--> Total Swaps: 31
+
+--> Give an address: 
+--> Address: 93
+swap!!
+physical frame: 1
+PHYSCIAL addr: 13
+--> Physical memory: 13
+--> Total Swaps: 32
+
+--> Give an address: 
+--> Address: 119
+swap!!
+physical frame: 3
+PHYSCIAL addr: 31
+--> Physical memory: 31
+--> Total Swaps: 33
+
+--> Give an address: 
+--> Address: 72
+swap!!
+physical frame: 2
+PHYSCIAL addr: 16
+--> Physical memory: 16
+--> Total Swaps: 34
+
+--> Give an address: 
+--> Address: 56
+swap!!
+physical frame: 0
+PHYSCIAL addr: 0
+--> Physical memory: 0
+--> Total Swaps: 35
+
+--> Give an address: 
+--> Address: 125
+swap!!
+physical frame: 1
+PHYSCIAL addr: 13
+--> Physical memory: 13
+--> Total Swaps: 36
+
+--> Give an address: 
+--> Address: 210
+swap!!
+physical frame: 3
+PHYSCIAL addr: 26
+--> Physical memory: 26
+--> Total Swaps: 37
+
+--> Give an address: 
+--> Address: 198
+swap!!
+physical frame: 2
+PHYSCIAL addr: 22
+--> Physical memory: 22
+--> Total Swaps: 38
+
+--> Give an address: 
+--> Address: 65
+swap!!
+physical frame: 0
+PHYSCIAL addr: 1
+--> Physical memory: 1
+--> Total Swaps: 39
+
+--> Give an address: 
+--> Address: 144
+swap!!
+physical frame: 1
+PHYSCIAL addr: 8
+--> Physical memory: 8
+--> Total Swaps: 40
+
+--> Give an address: 
+--> Address: 200
+swap!!
+physical frame: 3
+PHYSCIAL addr: 24
+--> Physical memory: 24
+--> Total Swaps: 41
+
+--> Give an address: 
+--> Address: 212
+swap!!
+physical frame: 2
+PHYSCIAL addr: 20
+--> Physical memory: 20
+--> Total Swaps: 42
+
+--> Give an address: 
+--> Address: 176
+swap!!
+physical frame: 0
+PHYSCIAL addr: 0
+--> Physical memory: 0
+--> Total Swaps: 43
+
+--> Give an address: 
+--> Address: 252
+swap!!
+physical frame: 1
+PHYSCIAL addr: 12
+--> Physical memory: 12
+--> Total Swaps: 44
+
+--> Give an address: 
+--> Address: 208
+physical frame: 2
+PHYSCIAL addr: 16
+--> Physical memory: 16
+--> Total Swaps: 44
+
+--> Give an address: 
+--> Address: 39
+swap!!
+physical frame: 3
+PHYSCIAL addr: 31
+--> Physical memory: 31
+--> Total Swaps: 45
+
+--> Give an address: 
+--> Address: 234
+swap!!
+physical frame: 0
+PHYSCIAL addr: 2
+--> Physical memory: 2
+--> Total Swaps: 46
+
+--> Give an address: 
+--> Address: 213
+physical frame: 2
+PHYSCIAL addr: 21
+--> Physical memory: 21
+--> Total Swaps: 46
+
+--> Give an address: 
+--> Address: 68
+swap!!
+physical frame: 1
+PHYSCIAL addr: 12
+--> Physical memory: 12
+--> Total Swaps: 47
+
+--> Give an address: 
+--> Address: 3
+swap!!
+physical frame: 3
+PHYSCIAL addr: 27
+--> Physical memory: 27
+--> Total Swaps: 48
+
+--> Give an address: 
+--> Address: 96
+swap!!
+physical frame: 0
+PHYSCIAL addr: 0
+--> Physical memory: 0
+--> Total Swaps: 49
+
+--> Give an address: 
+--> Address: 248
+swap!!
+physical frame: 2
+PHYSCIAL addr: 16
+--> Physical memory: 16
+--> Total Swaps: 50
+
+--> Give an address: 
+--> Address: 223
+swap!!
+physical frame: 1
+PHYSCIAL addr: 15
+--> Physical memory: 15
+--> Total Swaps: 51
+
+--> Give an address: 
+--> Address: 223
+physical frame: 1
+PHYSCIAL addr: 15
+--> Physical memory: 15
+--> Total Swaps: 51
+
+--> Give an address: 
+--> Address: 234
+swap!!
+physical frame: 3
+PHYSCIAL addr: 26
+--> Physical memory: 26
+--> Total Swaps: 52
+
+--> Give an address: 
+--> Address: 41
+swap!!
+physical frame: 0
+PHYSCIAL addr: 1
+--> Physical memory: 1
+--> Total Swaps: 53
+
+--> Give an address: 
+--> Address: 184
+swap!!
+physical frame: 2
+PHYSCIAL addr: 16
+--> Physical memory: 16
+--> Total Swaps: 54
+
+--> Give an address: 
+--> Address: 90
+swap!!
+physical frame: 1
+PHYSCIAL addr: 10
+--> Physical memory: 10
+--> Total Swaps: 55
+
+--> Give an address: 
+--> Address: 252
+swap!!
+physical frame: 3
+PHYSCIAL addr: 28
+--> Physical memory: 28
+--> Total Swaps: 56
+
+--> Give an address: 
+--> Address: 62
+swap!!
+physical frame: 0
+PHYSCIAL addr: 6
+--> Physical memory: 6
+--> Total Swaps: 57
+
+--> Give an address: 
+--> Address: 18
+swap!!
+physical frame: 2
+PHYSCIAL addr: 18
+--> Physical memory: 18
+--> Total Swaps: 58
+
+--> Give an address: 
+--> Address: 26
+swap!!
+physical frame: 1
+PHYSCIAL addr: 10
+--> Physical memory: 10
+--> Total Swaps: 59
+
+--> Give an address: 
+--> Address: 206
+swap!!
+physical frame: 3
+PHYSCIAL addr: 30
+--> Physical memory: 30
+--> Total Swaps: 60
+
+--> Give an address: 
+--> Address: 205
+physical frame: 3
+PHYSCIAL addr: 29
+--> Physical memory: 29
+--> Total Swaps: 60
+
+--> Give an address: 
+--> Address: 196
+swap!!
+physical frame: 0
+PHYSCIAL addr: 4
+--> Physical memory: 4
+--> Total Swaps: 61
+
+--> Give an address: 
+--> Address: 213
+swap!!
+physical frame: 2
+PHYSCIAL addr: 21
+--> Physical memory: 21
+--> Total Swaps: 62
+
+--> Give an address: 
+--> Address: 241
+swap!!
+physical frame: 1
+PHYSCIAL addr: 9
+--> Physical memory: 9
+--> Total Swaps: 63
+
+--> Give an address: 
+--> Address: 180
+swap!!
+physical frame: 3
+PHYSCIAL addr: 28
+--> Physical memory: 28
+--> Total Swaps: 64
+
+--> Give an address: 
+--> Address: 107
+swap!!
+physical frame: 0
+PHYSCIAL addr: 3
+--> Physical memory: 3
+--> Total Swaps: 65
+
+--> Give an address: 
+--> Address: 40
+swap!!
+physical frame: 2
+PHYSCIAL addr: 16
+--> Physical memory: 16
+--> Total Swaps: 66
+
+--> Give an address: 
+--> Address: 38
+swap!!
+physical frame: 1
+PHYSCIAL addr: 14
+--> Physical memory: 14
+--> Total Swaps: 67
+
+--> Give an address: 
+--> Address: 61
+swap!!
+physical frame: 3
+PHYSCIAL addr: 29
+--> Physical memory: 29
+--> Total Swaps: 68
+
+--> Give an address: 
+--> Address: 252
+swap!!
+physical frame: 0
+PHYSCIAL addr: 4
+--> Physical memory: 4
+--> Total Swaps: 69
+
+--> Give an address: 
+--> Address: 123
+swap!!
+physical frame: 2
+PHYSCIAL addr: 19
+--> Physical memory: 19
+--> Total Swaps: 70
+
+--> Give an address: 
+--> Address: 239
+swap!!
+physical frame: 1
+PHYSCIAL addr: 15
+--> Physical memory: 15
+--> Total Swaps: 71
+
+--> Give an address: 
+--> Address: 47
+swap!!
+physical frame: 3
+PHYSCIAL addr: 31
+--> Physical memory: 31
+--> Total Swaps: 72
+
+--> Give an address: 
+--> Address: 176
+swap!!
+physical frame: 0
+PHYSCIAL addr: 0
+--> Physical memory: 0
+--> Total Swaps: 73
+
+--> Give an address: 
+--> Address: 165
+swap!!
+physical frame: 2
+PHYSCIAL addr: 21
+--> Physical memory: 21
+--> Total Swaps: 74
+
+--> Give an address: 
+--> Address: 103
+swap!!
+physical frame: 1
+PHYSCIAL addr: 15
+--> Physical memory: 15
+--> Total Swaps: 75
+
+--> Give an address: 
+--> Address: 222
+swap!!
+physical frame: 3
+PHYSCIAL addr: 30
+--> Physical memory: 30
+--> Total Swaps: 76
+
+--> Give an address: 
+--> Address: 101
+physical frame: 1
+PHYSCIAL addr: 13
+--> Physical memory: 13
+--> Total Swaps: 76
+
+--> Give an address: 
+--> Address: 100
+physical frame: 1
+PHYSCIAL addr: 12
+--> Physical memory: 12
+--> Total Swaps: 76
+
+--> Give an address: 
+--> Address: 180
+physical frame: 0
+PHYSCIAL addr: 4
+--> Physical memory: 4
+--> Total Swaps: 76
+
+--> Give an address: 
+--> Address: 84
+swap!!
+physical frame: 0
+PHYSCIAL addr: 4
+--> Physical memory: 4
+--> Total Swaps: 77
+
+--> Give an address: 
+--> Address: 95
+swap!!
+physical frame: 2
+PHYSCIAL addr: 23
+--> Physical memory: 23
+--> Total Swaps: 78
+
+--> Give an address: 
+--> Address: 239
+swap!!
+physical frame: 1
+PHYSCIAL addr: 15
+--> Physical memory: 15
+--> Total Swaps: 79
+
+--> Give an address: 
+--> Address: 39
+swap!!
+physical frame: 3
+PHYSCIAL addr: 31
+--> Physical memory: 31
+--> Total Swaps: 80
+
+--> Give an address: 
+--> Address: 183
+swap!!
+physical frame: 0
+PHYSCIAL addr: 7
+--> Physical memory: 7
+--> Total Swaps: 81
+
+--> Give an address: quit program

@@ -3,7 +3,7 @@
 #include "memoryManager.hpp"
 #include "virtualMemoryManagerInterface.hpp"
 
-
+/*
 int main()
 {
 	//	memoryManager(ReplacementPolicy p, unsigned int pS, unsigned int nF, unsigned int vA) :
@@ -38,3 +38,4 @@ int main()
 
 	return 0;
 }
+*/

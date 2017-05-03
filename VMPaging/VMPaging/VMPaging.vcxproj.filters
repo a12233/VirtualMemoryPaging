@@ -21,6 +21,9 @@
     <ClCompile Include="memoryManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="john.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="virtualMemoryManagerInterface.hpp">
