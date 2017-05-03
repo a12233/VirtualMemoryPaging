@@ -1,3 +1,7 @@
+// Aiyu Cui
+// Rex Li
+// Weiming Shan
+
 #pragma once
 #include <iostream>
 #include <cassert>

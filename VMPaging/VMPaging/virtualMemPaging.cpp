@@ -1,4 +1,6 @@
-
+// Aiyu Cui
+// Rex Li
+// Weiming Shan
 
 #include "memoryManager.hpp"
 #include "virtualMemoryManagerInterface.hpp"
