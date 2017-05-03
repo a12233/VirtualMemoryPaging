@@ -56,6 +56,8 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 
 }
 
+
+// Find index of page based on logical address
 int memoryManager::findPageIndex(unsigned long long addr) {
 
 	int page = addr / pow(2,N); 
@@ -63,11 +65,13 @@ int memoryManager::findPageIndex(unsigned long long addr) {
 
 }
 
+// Get physcial adress when given offset and frame index
 int memoryManager::getPMIndex(int addr, int frame_i) {
 	int offset = addr % (int)pow(2, N);
 	return (frame_i*pow(2,N) + offset);
 }
 
+// Find frame if page in memory
 int memoryManager::findPhysicalAddr(int addr) {
 	for (int i = 0; i < phyMemSize; i++) { 
 		//if (PHYSICAL_MEMORY[i] == addr) {
@@ -77,6 +81,7 @@ int memoryManager::findPhysicalAddr(int addr) {
 	}
 	return (-1);
 }
+
 
 // Update timer, PHYSICAL_MEMORY_TIME_IN, PHYSCIAL_MEMORY_TIME_ACCESS
 void memoryManager::timerUpdate(int phy_addr, bool first_in) {
