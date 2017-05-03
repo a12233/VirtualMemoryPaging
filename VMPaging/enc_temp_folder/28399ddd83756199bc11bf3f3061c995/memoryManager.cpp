@@ -4,54 +4,57 @@
 unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 
 	cout << "virtual address: " << address << endl;
-	unsigned long long pageNum = findPageIndex(address);
-	cout << "virtual page: " << pageNum << endl;
+	unsigned long long addressNew = findPageIndex(address);
+	cout << "virtual page: " << addressNew << endl;
 	
 	// If not a valid addr, reject
-	if (pow(2,pageNum) > pow(2,virtualAddressSpaceSize)) {
+	if (pow(2,addressNew) > pow(2,virtualAddressSpaceSize)) {
 		cerr << "invalid virtual address!" << endl;
 	}
 
-	int nextAvailableFrame = findPhysicalAddr(pageNum);
+	int phyAddrIdx = findPhysicalAddr(addressNew);
 	// return addr if required has already been in the physical memory
-	if (nextAvailableFrame != -1) {
-		timerUpdate(nextAvailableFrame, false);
-		cout << "physical frame: " << nextAvailableFrame << endl;
-		cout << "PHYSCIAL addr: " << getPMIndex(address, nextAvailableFrame) << endl;
-		return getPMIndex(pageNum,nextAvailableFrame);
+	if (phyAddrIdx != -1) {
+		timerUpdate(phyAddrIdx, false);
+		cout << "physical frame: " << phyAddrIdx << endl;
+		cout << "PHYSCIAL addr: " << getPMIndex(address, phyAddrIdx) << endl;
+		return getPMIndex(addressNew,phyAddrIdx);
 	}
 	
 	// if not in the memory
 	// try to find a place available in the memory
-	int nextAvailableFrame = findNextAvailableAddr();
+	int nextAvailableAddr = findNextAvailableAddr();
 	// if no place available in the memory, execute the replacement policy
-	if (nextAvailableFrame == -1) {
+	if (nextAvailableAddr == -1) {
 		if (policy == FIFO) {   
-			nextAvailableFrame = findFifoAddr();
-			if (nextAvailableFrame == -1) {
+			nextAvailableAddr = findFifoAddr();
+			if (nextAvailableAddr == -1) {
 				cout << "FIFO wrong!" << endl;
 			}
 		}
 		else {
-			nextAvailableFrame = findLruAddr();
-			if (nextAvailableFrame == -1) {
-				cout << "LRU wrong!" << endl;
+			nextAvailableAddr = findLruAddr();
+			if (nextAvailableAddr == -1) {
+				cout << "lRU wrong!" << endl;
 			}
 		}
 		// Save back to disk
 		cout << "swap!!" << endl;
 		//swap(PHYSICAL_MEMORY[nextAvailableAddr], addressNew);
-		swap(phyMem[nextAvailableFrame], pageNum); 
+		swap(phyMem[nextAvailableAddr], addressNew); 
 	}
-	phyMem[nextAvailableFrame] = pageNum; 
+	//PHYSICAL_MEMORY[nextAvailableAddr] = addressNew;
+	phyMem[nextAvailableAddr] = addressNew; 
 
-	phyMemFree[nextAvailableFrame] = false; 
-	timerUpdate(nextAvailableFrame, true);
+	//PHYSICAL_MEMORY_FREE[nextAvailableAddr] = false;
+	phyMemFree[nextAvailableAddr] = false; 
+
+	timerUpdate(nextAvailableAddr, true);
 	//freeMem();
-	cout << "physical frame: " << nextAvailableFrame << endl;
-	cout << "PHYSCIAL addr: " << getPMIndex(address, nextAvailableFrame) << endl;
+	cout << "physical frame: " << nextAvailableAddr << endl;
+	cout << "PHYSCIAL addr: " << getPMIndex(address, nextAvailableAddr) << endl;
 	cout << endl;
-	return getPMIndex(address, nextAvailableFrame);
+	return getPMIndex(address, nextAvailableAddr);
 
 }
 

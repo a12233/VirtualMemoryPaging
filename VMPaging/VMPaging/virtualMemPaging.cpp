@@ -24,7 +24,9 @@ int main()
 	for (int i = 0; i < 12; i++)
 	{
 		cout << i << endl;
-		mem1.memoryAccess(phyAdd[i]);
+		cout << "input: " << phyAdd[i] << endl;
+		int c = mem1.memoryAccess(phyAdd[i]);
+		cout << "output: " << c << endl;
 
 	}
 	int temp = mem1.numberPageSwaps();
