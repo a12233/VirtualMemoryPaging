@@ -243,3 +243,11 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/VMPaging/VMPaging/result0.txt
+/VMPaging/VMPaging/NormalTB.cpp
+/VMPaging/VMPaging/johnTB1.txt
+/VMPaging/VMPaging/johnTB0.txt
+/VMPaging/VMPaging/johnTB.cpp
+/VMPaging/VMPaging/glynTB1.txt
+/VMPaging/VMPaging/glynTB.cpp
+/VMPaging/johnTB0.txt

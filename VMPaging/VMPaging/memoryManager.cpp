@@ -31,13 +31,13 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 		if (policy == FIFO) {   
 			nextAvailableFrame = findFifoAddr();
 			if (nextAvailableFrame == -1) {
-				cout << "FIFO wrong!" << endl;
+				cerr << "FIFO wrong!" << endl;
 			}
 		}
 		else {
 			nextAvailableFrame = findLruAddr();
 			if (nextAvailableFrame == -1) {
-				cout << "LRU wrong!" << endl;
+				cerr << "LRU wrong!" << endl;
 			}
 		}
 		// Save back to disk

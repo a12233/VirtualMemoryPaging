@@ -146,7 +146,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="john.cpp" />
     <ClCompile Include="memoryManager.cpp" />
     <ClCompile Include="virtualMemPaging.cpp" />
   </ItemGroup>
