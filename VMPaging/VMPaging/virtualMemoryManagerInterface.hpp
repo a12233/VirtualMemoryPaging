@@ -43,10 +43,6 @@ public:
 	*/
 	unsigned long long& numberPageSwaps() { return numSwaps; }
 
-
-
-
-
 protected:
 	ReplacementPolicy policy;
 
@@ -55,6 +51,5 @@ protected:
 	unsigned int virtualAddressSpaceSize; ///  2^virtualAddressSpaceSize = total virtual address space (bytes)
 
 	unsigned long long numSwaps = 0; ///total number of page swaps performed
-	int Timer = 0;
 
 };

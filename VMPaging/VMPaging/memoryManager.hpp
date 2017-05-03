@@ -53,13 +53,6 @@ public:
 	void freeMem(); 
 
 private:
-	//unsigned int * PAGE_TABLE;
-	//bool *PAGE_TABLE_VALID;
-
-//	int * PHYSICAL_MEMORY;
-//	bool * PHYSICAL_MEMORY_FREE;
-//	int * PHYSICAL_MEMORY_TIME_IN;
-	//int * PHYSCIAL_MEMORY_TIME_ACCESS;
 
 	vector<int> phyMem;
 	vector<bool> phyMemFree;

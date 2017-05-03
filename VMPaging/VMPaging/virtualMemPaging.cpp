@@ -26,7 +26,7 @@ int main()
 		cout << i << endl;
 		cout << "input: " << phyAdd[i] << endl;
 		int c = mem1.memoryAccess(phyAdd[i]);
-		cout << "output: " << c << endl;
+		cout << "output: " << c << endl << endl;
 
 	}
 	int temp = mem1.numberPageSwaps();

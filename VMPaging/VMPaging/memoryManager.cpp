@@ -12,8 +12,10 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 		cerr << "invalid virtual address!" << endl;
 	}
 
+	// Check whether the page has already been in the memory
 	int nextAvailableFrame = findPhysicalAddr(pageNum);
-	// return addr if required has already been in the physical memory
+
+	// if in memory, return
 	if (nextAvailableFrame != -1) {
 		timerUpdate(nextAvailableFrame, false);
 		cout << "physical frame: " << nextAvailableFrame << endl;
@@ -22,8 +24,8 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	}
 	
 	// if not in the memory
-	// try to find a place available in the memory
-	int nextAvailableFrame = findNextAvailableAddr();
+	// if any free frame in memory, take the free spot
+	nextAvailableFrame = findNextAvailableAddr();
 	// if no place available in the memory, execute the replacement policy
 	if (nextAvailableFrame == -1) {
 		if (policy == FIFO) {   
@@ -40,17 +42,16 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 		}
 		// Save back to disk
 		cout << "swap!!" << endl;
-		//swap(PHYSICAL_MEMORY[nextAvailableAddr], addressNew);
 		swap(phyMem[nextAvailableFrame], pageNum); 
 	}
+	// Set page into frame
 	phyMem[nextAvailableFrame] = pageNum; 
-
 	phyMemFree[nextAvailableFrame] = false; 
 	timerUpdate(nextAvailableFrame, true);
-	//freeMem();
+
 	cout << "physical frame: " << nextAvailableFrame << endl;
 	cout << "PHYSCIAL addr: " << getPMIndex(address, nextAvailableFrame) << endl;
-	cout << endl;
+
 	return getPMIndex(address, nextAvailableFrame);
 
 }
@@ -109,7 +110,7 @@ int memoryManager::findNextAvailableAddr() {
 /** This is the method to find FIFO index among the Physical memory
 */
 int memoryManager::findFifoAddr() {
-	int fifo_time = 100000;
+	int fifo_time = 10000000;
 	int fifo_index = -1;
 
 	for (int i = 0; i < phyMemSize; i++) {
@@ -126,7 +127,7 @@ int memoryManager::findFifoAddr() {
 /** This is the method to find LRU index among the Physical memory
 */
 int memoryManager::findLruAddr() {
-	int lru_time = 100000;
+	int lru_time = 10000000;
 	int lru_index = -1;
 
 	for (int i = 0; i < phyMemSize; i++) {
