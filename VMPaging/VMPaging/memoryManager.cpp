@@ -18,8 +18,8 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	// if in memory, return
 	if (nextAvailableFrame != -1) {
 		timerUpdate(nextAvailableFrame, false);
-		cout << "physical frame: " << nextAvailableFrame << endl;
-		cout << "PHYSCIAL addr: " << getPMIndex(address, nextAvailableFrame) << endl;
+		//cout << "physical frame: " << nextAvailableFrame << endl;
+		//cout << "PHYSCIAL addr: " << getPMIndex(address, nextAvailableFrame) << endl;
 		return getPMIndex(address,nextAvailableFrame);
 	}
 	
@@ -41,7 +41,7 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 			}
 		}
 		// Save back to disk
-		cout << "swap!!" << endl;
+	//	cout << "swap!!" << endl;
 		swap(phyMem[nextAvailableFrame], pageNum); 
 	}
 	// Set page into frame
@@ -49,8 +49,8 @@ unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 	phyMemFree[nextAvailableFrame] = false; 
 	timerUpdate(nextAvailableFrame, true);
 
-	cout << "physical frame: " << nextAvailableFrame << endl;
-	cout << "PHYSCIAL addr: " << getPMIndex(address, nextAvailableFrame) << endl;
+//	cout << "physical frame: " << nextAvailableFrame << endl;
+//	cout << "PHYSCIAL addr: " << getPMIndex(address, nextAvailableFrame) << endl;
 
 	return getPMIndex(address, nextAvailableFrame);
 
@@ -65,7 +65,6 @@ int memoryManager::findPageIndex(unsigned long long addr) {
 
 int memoryManager::getPMIndex(int addr, int frame_i) {
 	int offset = addr % (int)pow(2, N);
-	cout << offset;
 	return (frame_i*pow(2,N) + offset);
 }
 
